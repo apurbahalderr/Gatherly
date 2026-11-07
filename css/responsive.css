@@ -34,11 +34,24 @@
   }
 
   .nav-links {
-    display: none;
+    display: none !important;
   }
 
   .mobile-menu-btn {
-    display: flex;
+    display: flex !important;
+  }
+
+  .nav-actions .btn {
+    display: none;
+  }
+
+  .brand-logo {
+    font-size: var(--text-xl);
+  }
+
+  .brand-logo-mark {
+    width: 32px;
+    height: 32px;
   }
 
   .section {

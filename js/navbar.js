@@ -25,6 +25,15 @@ document.addEventListener('DOMContentLoaded', () => {
         mobileBtn.innerHTML = `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>`;
       }
     });
+
+    // Close when resizing back to desktop screen
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768 && mobileNav.classList.contains('is-open')) {
+        mobileNav.classList.remove('is-open');
+        mobileBtn.setAttribute('aria-expanded', 'false');
+        mobileBtn.innerHTML = `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>`;
+      }
+    });
   }
 
   // 2. Active Link Highlighting

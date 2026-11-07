@@ -16,12 +16,14 @@ const StorageService = {
   init() {
     try {
       const storedEvents = localStorage.getItem(STORAGE_KEYS.EVENTS);
-      if (!storedEvents || JSON.parse(storedEvents).length === 0) {
-        localStorage.setItem(STORAGE_KEYS.EVENTS, JSON.stringify(SEED_EVENTS));
-      }
+      const currencyVersion = localStorage.getItem('gatherly_currency_version');
 
-      if (!localStorage.getItem(STORAGE_KEYS.BOOKINGS)) {
-        // Seed 1 realistic sample booking so the user can immediately experience the "My Bookings" page
+      // If no events or currency not updated to INR, seed/update with INR prices
+      if (!storedEvents || JSON.parse(storedEvents).length === 0 || currencyVersion !== 'inr_v2') {
+        localStorage.setItem(STORAGE_KEYS.EVENTS, JSON.stringify(SEED_EVENTS));
+        localStorage.setItem('gatherly_currency_version', 'inr_v2');
+
+        // Seed realistic sample booking with INR pricing
         const sampleBooking = {
           id: 'GATH-9842-831',
           eventId: 'evt-ai-summit-2026',
@@ -30,7 +32,7 @@ const StorageService = {
           eventTime: '09:00 AM - 05:30 PM PST',
           eventVenue: 'Metropolitan Tech Center, Hall A',
           eventImage: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=80',
-          eventPrice: 149,
+          eventPrice: 1499,
           userName: 'Alex Chen',
           userEmail: 'alex.chen@innovate.dev',
           userPhone: '+1 (555) 234-5678',
@@ -308,7 +310,7 @@ const DateUtils = {
     if (price === 0 || price === '0' || price === null || price === undefined) {
       return 'Free';
     }
-    return `$${Number(price).toFixed(0)}`;
+    return `₹${Number(price).toLocaleString('en-IN')}`;
   },
 
   escapeHtml(str) {
