@@ -1,0 +1,162 @@
+/* ==========================================================================
+   Gatherly Design System - Variables & Tokens
+   ========================================================================== */
+
+:root {
+  /* Brand Color Palette */
+  --color-primary: #6941C6;
+  --color-primary-hover: #53389E;
+  --color-primary-light: #F4EBFF;
+  --color-primary-subtle: rgba(105, 65, 198, 0.08);
+
+  --color-accent: #FF7547;
+  --color-accent-hover: #E55F33;
+  --color-accent-light: #FFF2ED;
+  --color-accent-subtle: rgba(255, 117, 71, 0.1);
+
+  /* Neutrals - Light Mode */
+  --color-bg: #F8F7F4;
+  --color-surface: #FFFFFF;
+  --color-surface-raised: #FFFFFF;
+  --color-surface-sunken: #F0EFEB;
+  --color-border: #E5E3DD;
+  --color-border-subtle: #ECEAE4;
+
+  --color-text: #191724;
+  --color-text-secondary: #585566;
+  --color-text-muted: #8F8B9D;
+  --color-text-inverse: #FFFFFF;
+
+  /* Functional Status Colors */
+  --color-success: #027A48;
+  --color-success-bg: #ECFDF3;
+  --color-success-border: #ABEFC6;
+
+  --color-warning: #B54708;
+  --color-warning-bg: #FFFAEB;
+  --color-warning-border: #FEDF89;
+
+  --color-danger: #B42318;
+  --color-danger-bg: #FEF3F2;
+  --color-danger-border: #FECDCA;
+
+  --color-info: #026AA2;
+  --color-info-bg: #F0F9FF;
+  --color-info-border: #B9E6FE;
+
+  /* Typography */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-display: 'Plus Jakarta Sans', var(--font-sans);
+
+  --text-xs: 0.75rem;     /* 12px */
+  --text-sm: 0.875rem;    /* 14px */
+  --text-base: 1rem;      /* 16px */
+  --text-lg: 1.125rem;    /* 18px */
+  --text-xl: 1.25rem;     /* 20px */
+  --text-2xl: 1.5rem;     /* 24px */
+  --text-3xl: 1.875rem;   /* 30px */
+  --text-4xl: 2.25rem;    /* 36px */
+  --text-5xl: 3rem;       /* 48px */
+  --text-6xl: 3.75rem;    /* 60px */
+
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  --font-extrabold: 800;
+
+  --leading-tight: 1.15;
+  --leading-snug: 1.3;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.65;
+
+  /* Spacing */
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-5: 1.25rem;   /* 20px */
+  --space-6: 1.5rem;    /* 24px */
+  --space-8: 2rem;      /* 32px */
+  --space-10: 2.5rem;   /* 40px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+  --space-20: 5rem;     /* 80px */
+  --space-24: 6rem;     /* 96px */
+
+  /* Borders & Radius */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Shadows (Subtle & Layered) */
+  --shadow-xs: 0 1px 2px rgba(16, 24, 40, 0.04);
+  --shadow-sm: 0 1px 3px rgba(16, 24, 40, 0.08), 0 1px 2px rgba(16, 24, 40, 0.04);
+  --shadow-md: 0 4px 12px -2px rgba(16, 24, 40, 0.08), 0 2px 4px -2px rgba(16, 24, 40, 0.04);
+  --shadow-lg: 0 12px 24px -4px rgba(16, 24, 40, 0.1), 0 4px 8px -2px rgba(16, 24, 40, 0.04);
+  --shadow-xl: 0 24px 48px -12px rgba(16, 24, 40, 0.14);
+  --shadow-card-hover: 0 16px 32px -6px rgba(105, 65, 198, 0.12), 0 6px 12px -4px rgba(16, 24, 40, 0.06);
+
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Layout */
+  --container-max: 1240px;
+  --container-narrow: 880px;
+  --navbar-height: 76px;
+}
+
+/* ==========================================================================
+   Dark Theme Overrides
+   ========================================================================== */
+[data-theme="dark"] {
+  --color-primary: #875BF7;
+  --color-primary-hover: #9E77ED;
+  --color-primary-light: rgba(135, 91, 247, 0.18);
+  --color-primary-subtle: rgba(135, 91, 247, 0.12);
+
+  --color-accent: #FF855D;
+  --color-accent-hover: #FFA07E;
+  --color-accent-light: rgba(255, 133, 93, 0.18);
+  --color-accent-subtle: rgba(255, 133, 93, 0.12);
+
+  --color-bg: #0F0E14;
+  --color-surface: #171520;
+  --color-surface-raised: #1F1C2C;
+  --color-surface-sunken: #13111B;
+  --color-border: #2B273A;
+  --color-border-subtle: #232031;
+
+  --color-text: #F4F3F7;
+  --color-text-secondary: #AAA5B8;
+  --color-text-muted: #746F82;
+  --color-text-inverse: #0F0E14;
+
+  --color-success: #12B76A;
+  --color-success-bg: rgba(18, 183, 106, 0.15);
+  --color-success-border: #05603A;
+
+  --color-warning: #F79009;
+  --color-warning-bg: rgba(247, 144, 9, 0.15);
+  --color-warning-border: #7A2E0E;
+
+  --color-danger: #F04438;
+  --color-danger-bg: rgba(240, 68, 56, 0.15);
+  --color-danger-border: #7A271A;
+
+  --color-info: #0BA5EC;
+  --color-info-bg: rgba(11, 165, 236, 0.15);
+  --color-info-border: #026AA2;
+
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 12px 28px rgba(0, 0, 0, 0.55);
+  --shadow-xl: 0 24px 48px rgba(0, 0, 0, 0.7);
+  --shadow-card-hover: 0 18px 36px rgba(135, 91, 247, 0.18);
+}

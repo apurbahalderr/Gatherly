@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gatherly – Find your people. Find your events.</title>
+  <meta name="description" content="Discover, register, and experience curated events in Technology, Music, Sports, Workshops, Culture, and Business.">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Gatherly Design System -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- ==================== Navigation Bar ==================== -->
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <a href="index.html" class="brand-logo" aria-label="Gatherly Home">
+        <div class="brand-logo-mark">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v3M12 19v3M2 12h3M19 12h3"/>
+          </svg>
+        </div>
+        <span>Gatherly<span class="dot">.</span></span>
+      </a>
+
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="events.html" class="nav-link">Explore Events</a>
+        <a href="bookings.html" class="nav-link">My Bookings</a>
+        <a href="admin.html" class="nav-link">Admin</a>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Dark/Light Mode Switcher -->
+        <button class="theme-toggle-btn" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+
+        <a href="events.html" class="btn btn-primary btn-sm">
+          <span>Explore</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+
+        <!-- Mobile Drawer Hamburger -->
+        <button class="mobile-menu-btn" aria-label="Open mobile menu" aria-expanded="false">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-nav" aria-label="Mobile Navigation">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="events.html" class="nav-link">Explore Events</a>
+      <a href="bookings.html" class="nav-link">My Bookings</a>
+      <a href="admin.html" class="nav-link">Admin Dashboard</a>
+      <div style="margin-top: 1rem;">
+        <a href="events.html" class="btn btn-primary w-full">Browse All Events</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==================== Hero Section ==================== -->
+    <section class="hero-section">
+      <div class="hero-glow"></div>
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="sparkle">✨</span>
+            <span>Premium Event Discovery Platform</span>
+          </div>
+
+          <h1 class="hero-title">
+            Life happens <br><span class="highlight">outside your screen.</span>
+          </h1>
+
+          <p class="hero-desc">
+            Find your people. Find your events. Gatherly connects curious minds to high-signal conferences, underground music gigs, athletic championships, and creative masterclasses.
+          </p>
+
+          <!-- Hero Search Card -->
+          <form id="hero-search-form" class="hero-search-card" role="search">
+            <div class="hero-search-input-wrapper">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              <input 
+                type="text" 
+                id="hero-search-query" 
+                class="hero-search-input" 
+                placeholder="Search by event title, keyword, city..." 
+                aria-label="Search events"
+              >
+            </div>
+
+            <div class="hero-search-divider"></div>
+
+            <div class="hero-search-select-wrapper">
+              <select id="hero-search-category" class="hero-search-select" aria-label="Filter by category">
+                <option value="all">All Categories</option>
+                <option value="technology">Technology</option>
+                <option value="music">Music</option>
+                <option value="sports">Sports</option>
+                <option value="workshops">Workshops</option>
+                <option value="cultural">Cultural</option>
+                <option value="business">Business</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg">
+              <span>Find Events</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+          </form>
+
+          <!-- Category Quick Filter Pills -->
+          <div class="categories-pills-wrap">
+            <a href="events.html?cat=technology" class="cat-pill">
+              <span>💻</span> Technology
+            </a>
+            <a href="events.html?cat=music" class="cat-pill">
+              <span>🎵</span> Music
+            </a>
+            <a href="events.html?cat=sports" class="cat-pill">
+              <span>⚡</span> Sports
+            </a>
+            <a href="events.html?cat=workshops" class="cat-pill">
+              <span>🛠️</span> Workshops
+            </a>
+            <a href="events.html?cat=cultural" class="cat-pill">
+              <span>🌍</span> Cultural
+            </a>
+            <a href="events.html?cat=business" class="cat-pill">
+              <span>📈</span> Business
+            </a>
+          </div>
+        </div>
+
+        <!-- Featured Spotlight Event Section -->
+        <div id="featured-event-container">
+          <!-- Populated dynamically by main.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== Trending Events ==================== -->
+    <section class="section" style="background-color: var(--color-surface-sunken);">
+      <div class="container">
+        <div class="section-header flex items-center justify-between flex-wrap gap-4">
+          <div>
+            <span class="section-eyebrow">🔥 Curated Selection</span>
+            <h2 class="section-title">Trending This Month</h2>
+            <p class="section-subtitle">The most talked about experiences selling out fast.</p>
+          </div>
+          <a href="events.html" class="btn btn-secondary">
+            View All Events
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <div id="trending-events-grid" class="events-grid">
+          <!-- Populated dynamically by main.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== Upcoming Events ==================== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header flex items-center justify-between flex-wrap gap-4">
+          <div>
+            <span class="section-eyebrow">📅 What's Next</span>
+            <h2 class="section-title">Upcoming Experiences</h2>
+            <p class="section-subtitle">Mark your calendar for transformative moments.</p>
+          </div>
+          <div class="flex items-center gap-2">
+            <a href="events.html" class="btn btn-outline btn-sm">Explore All</a>
+          </div>
+        </div>
+
+        <div id="upcoming-events-grid" class="events-grid">
+          <!-- Populated dynamically by main.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== Why Gatherly / Value Strip ==================== -->
+    <section class="section" style="border-top: 1px solid var(--color-border); background-color: var(--color-surface);">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-eyebrow">✨ The Gatherly Standard</span>
+          <h2 class="section-title">Designed for Real-World Connections</h2>
+          <p class="section-subtitle">We remove friction so you can focus on making memories with people who share your passions.</p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-box">
+            <div class="feature-icon-wrapper">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3 class="feature-title">Verified Hosts & Venues</h3>
+            <p class="feature-desc">Every event is curated with authentic agendas, verified venues, and direct organizer contacts.</p>
+          </div>
+
+          <div class="feature-box">
+            <div class="feature-icon-wrapper">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            </div>
+            <h3 class="feature-title">Instant Digital Pass</h3>
+            <p class="feature-desc">Receive immediate verifiable registration passes with QR codes saved securely to your browser storage.</p>
+          </div>
+
+          <div class="feature-box">
+            <div class="feature-icon-wrapper">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+            </div>
+            <h3 class="feature-title">Real-Time Seat Tracking</h3>
+            <p class="feature-desc">Never get turned away at the door. Live seat limits protect capacity and restock automatically if cancelled.</p>
+          </div>
+
+          <div class="feature-box">
+            <div class="feature-icon-wrapper">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </div>
+            <h3 class="feature-title">No Hidden Service Fees</h3>
+            <p class="feature-desc">Transparent pricing from start to finish. Free events remain 100% free with zero registration surcharges.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== Footer ==================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <div class="brand-logo-mark">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <circle cx="12" cy="12" r="4"/>
+                <path d="M12 2v3M12 19v3M2 12h3M19 12h3"/>
+              </svg>
+            </div>
+            <span>Gatherly<span class="dot">.</span></span>
+          </a>
+          <p>
+            "Find your people. Find your events." <br>
+            A modern, responsive event discovery and registration platform built with pure Vanilla Web technologies.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="events.html" class="footer-link">Explore Events</a></li>
+            <li><a href="bookings.html" class="footer-link">My Bookings</a></li>
+            <li><a href="admin.html" class="footer-link">Admin Dashboard</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Categories</h4>
+          <ul class="footer-links">
+            <li><a href="events.html?cat=technology" class="footer-link">Technology</a></li>
+            <li><a href="events.html?cat=music" class="footer-link">Music & Festivals</a></li>
+            <li><a href="events.html?cat=sports" class="footer-link">Sports & Fitness</a></li>
+            <li><a href="events.html?cat=workshops" class="footer-link">Workshops & Masterclasses</a></li>
+            <li><a href="events.html?cat=cultural" class="footer-link">Cultural Galas</a></li>
+            <li><a href="events.html?cat=business" class="footer-link">Business & Venture</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Academic Project</h4>
+          <p class="text-sm text-muted" style="line-height: 1.6;">
+            College Web Development Assignment.<br>
+            Strictly built using HTML5, CSS3, Vanilla ES6+ JavaScript, and LocalStorage.
+          </p>
+          <div style="margin-top: 1rem;">
+            <span class="badge badge-primary">Vanilla JS Architecture</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 Gatherly Platform. All rights reserved.
+        </div>
+        <div class="flex items-center gap-4">
+          <span>Crafted with intentional design & clean code.</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/toast.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/card-builder.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

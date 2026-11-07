@@ -1,0 +1,152 @@
+/* ==========================================================================
+   Gatherly Design System - Responsive & Media Queries
+   ========================================================================== */
+
+/* Tablet & Smaller (< 1024px) */
+@media (max-width: 1024px) {
+  .details-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .details-sidebar {
+    position: static;
+    margin-top: var(--space-8);
+  }
+
+  .featured-card {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-media {
+    min-height: 280px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+  }
+}
+
+/* Tablet Portrait & Mobile (< 768px) */
+@media (max-width: 768px) {
+  :root {
+    --navbar-height: 68px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .mobile-menu-btn {
+    display: flex;
+  }
+
+  .section {
+    padding-top: var(--space-10);
+    padding-bottom: var(--space-10);
+  }
+
+  .hero-search-card {
+    flex-direction: column;
+    padding: var(--space-4);
+  }
+
+  .hero-search-divider {
+    display: none;
+  }
+
+  .hero-search-input-wrapper,
+  .hero-search-select-wrapper {
+    width: 100%;
+    padding: var(--space-2) 0;
+  }
+
+  .hero-search-card .btn {
+    width: 100%;
+  }
+
+  .events-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-content {
+    padding: var(--space-6);
+  }
+
+  .toolbar-filters-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filter-group {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: var(--space-2);
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .ticket-pass-body {
+    grid-template-columns: 1fr;
+  }
+
+  .ticket-qr-section {
+    border-left: none;
+    border-top: 1px dashed var(--color-border-subtle);
+    padding-left: 0;
+    padding-top: var(--space-4);
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: var(--space-4);
+    text-align: center;
+  }
+
+  .admin-card-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .countdown-box {
+    padding: var(--space-3) var(--space-4);
+    gap: var(--space-2);
+  }
+
+  .countdown-unit {
+    min-width: 44px;
+  }
+
+  .countdown-num {
+    font-size: var(--text-xl);
+  }
+}
+
+/* Extra Small Phones (< 480px) */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2.1rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .register-card-header,
+  .register-card-body {
+    padding: var(--space-5);
+  }
+}
