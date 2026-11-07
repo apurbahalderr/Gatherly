@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Bookings – Gatherly</title>
+  <meta name="description" content="View, manage, and download your confirmed event passes on Gatherly.">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Gatherly Design System -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- ==================== Navigation Bar ==================== -->
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <a href="index.html" class="brand-logo" aria-label="Gatherly Home">
+        <div class="brand-logo-mark">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v3M12 19v3M2 12h3M19 12h3"/>
+          </svg>
+        </div>
+        <span>Gatherly<span class="dot">.</span></span>
+      </a>
+
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="events.html" class="nav-link">Explore Events</a>
+        <a href="bookings.html" class="nav-link active">My Bookings</a>
+        <a href="admin.html" class="nav-link">Admin</a>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Theme Toggle -->
+        <button class="theme-toggle-btn" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+
+        <a href="events.html" class="btn btn-primary btn-sm">
+          <span>Find Events</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+
+        <!-- Mobile Drawer Hamburger -->
+        <button class="mobile-menu-btn" aria-label="Open mobile menu" aria-expanded="false">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-nav" aria-label="Mobile Navigation">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="events.html" class="nav-link">Explore Events</a>
+      <a href="bookings.html" class="nav-link active">My Bookings</a>
+      <a href="admin.html" class="nav-link">Admin Dashboard</a>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container container-narrow">
+      <div class="section-header">
+        <span class="section-eyebrow">🎟️ Wallet & Registrations</span>
+        <h1 class="section-title">My Booked Passes</h1>
+        <p class="section-subtitle">
+          Manage your upcoming event admissions, retrieve fast-pass entry QR codes, or cancel reservations if your plans change.
+        </p>
+      </div>
+
+      <!-- Bookings List Container -->
+      <div id="bookings-list-container">
+        <!-- Rendered dynamically by bookings.js -->
+      </div>
+
+      <!-- Empty State View -->
+      <div id="bookings-empty-state" class="empty-state" style="display: none;">
+        <div class="empty-state-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z"/><line x1="12" y1="9" x2="12" y2="15"/></svg>
+        </div>
+        <h2 class="empty-state-title">No bookings yet</h2>
+        <p class="empty-state-desc">
+          You haven't reserved any tickets yet. Explore our curated events across technology, music, sports, and culture to get started!
+        </p>
+        <a href="events.html" class="btn btn-primary">
+          Explore Upcoming Events
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- ==================== Cancellation Confirmation Modal ==================== -->
+  <div id="cancel-modal-backdrop" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3 id="modal-title" class="modal-title" style="color: var(--color-danger); display: flex; align-items: center; gap: 0.5rem;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          Cancel Registration?
+        </h3>
+        <button class="modal-close close-cancel-modal" aria-label="Close dialog">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <p style="margin-bottom: 1rem;">
+          Are you sure you want to cancel your registration for:
+        </p>
+        <div style="background-color: var(--color-surface-sunken); padding: 1rem; border-radius: var(--radius-md); border-left: 3px solid var(--color-danger); margin-bottom: 1rem;">
+          <strong id="cancel-modal-event-title" style="display: block; font-size: 1rem; margin-bottom: 0.25rem;"></strong>
+          <span style="font-size: 0.8rem; color: var(--color-text-muted); font-family: monospace;">Booking ID: <span id="cancel-modal-booking-id"></span></span>
+        </div>
+        <p class="text-sm text-muted">
+          Your seat will be immediately released back into the public ticket pool so other community attendees can register. This action cannot be undone.
+        </p>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-secondary close-cancel-modal">
+          Keep My Booking
+        </button>
+        <button id="confirm-cancel-btn" class="btn btn-danger">
+          Yes, Cancel Pass
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== Footer ==================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <div class="brand-logo-mark">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <circle cx="12" cy="12" r="4"/>
+                <path d="M12 2v3M12 19v3M2 12h3M19 12h3"/>
+              </svg>
+            </div>
+            <span>Gatherly<span class="dot">.</span></span>
+          </a>
+          <p>
+            "Find your people. Find your events." <br>
+            A modern, responsive event discovery and registration platform built with pure Vanilla Web technologies.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="events.html" class="footer-link">Explore Events</a></li>
+            <li><a href="bookings.html" class="footer-link">My Bookings</a></li>
+            <li><a href="admin.html" class="footer-link">Admin Dashboard</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Categories</h4>
+          <ul class="footer-links">
+            <li><a href="events.html?cat=technology" class="footer-link">Technology</a></li>
+            <li><a href="events.html?cat=music" class="footer-link">Music & Festivals</a></li>
+            <li><a href="events.html?cat=sports" class="footer-link">Sports & Fitness</a></li>
+            <li><a href="events.html?cat=workshops" class="footer-link">Workshops & Masterclasses</a></li>
+            <li><a href="events.html?cat=cultural" class="footer-link">Cultural Galas</a></li>
+            <li><a href="events.html?cat=business" class="footer-link">Business & Venture</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Academic Project</h4>
+          <p class="text-sm text-muted" style="line-height: 1.6;">
+            College Web Development Assignment.<br>
+            Strictly built using HTML5, CSS3, Vanilla ES6+ JavaScript, and LocalStorage.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 Gatherly Platform. All rights reserved.
+        </div>
+        <div>
+          <span>Crafted with intentional design & clean code.</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/toast.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/bookings.js"></script>
+</body>
+</html>
