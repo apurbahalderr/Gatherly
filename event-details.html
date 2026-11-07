@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Details – Gatherly</title>
+  <meta name="description" content="View full event schedule, venue location, speaker lineup, and ticket availability on Gatherly.">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Gatherly Design System -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- ==================== Navigation Bar ==================== -->
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <a href="index.html" class="brand-logo" aria-label="Gatherly Home">
+        <div class="brand-logo-mark">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v3M12 19v3M2 12h3M19 12h3"/>
+          </svg>
+        </div>
+        <span>Gatherly<span class="dot">.</span></span>
+      </a>
+
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="events.html" class="nav-link active">Explore Events</a>
+        <a href="bookings.html" class="nav-link">My Bookings</a>
+        <a href="admin.html" class="nav-link">Admin</a>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Theme Toggle -->
+        <button class="theme-toggle-btn" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+
+        <a href="events.html" class="btn btn-secondary btn-sm">
+          <span>All Events</span>
+        </a>
+
+        <!-- Mobile Drawer Hamburger -->
+        <button class="mobile-menu-btn" aria-label="Open mobile menu" aria-expanded="false">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-nav" aria-label="Mobile Navigation">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="events.html" class="nav-link active">Explore Events</a>
+      <a href="bookings.html" class="nav-link">My Bookings</a>
+      <a href="admin.html" class="nav-link">Admin Dashboard</a>
+    </div>
+  </header>
+
+  <main id="event-details-root" style="padding-bottom: 4rem;">
+    <!-- Rendered dynamically by event-details.js -->
+    <div class="container section text-center" style="padding: 5rem 0;">
+      <p class="text-muted">Loading event details...</p>
+    </div>
+  </main>
+
+  <!-- ==================== Footer ==================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <div class="brand-logo-mark">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <circle cx="12" cy="12" r="4"/>
+                <path d="M12 2v3M12 19v3M2 12h3M19 12h3"/>
+              </svg>
+            </div>
+            <span>Gatherly<span class="dot">.</span></span>
+          </a>
+          <p>
+            "Find your people. Find your events." <br>
+            A modern, responsive event discovery and registration platform built with pure Vanilla Web technologies.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="events.html" class="footer-link">Explore Events</a></li>
+            <li><a href="bookings.html" class="footer-link">My Bookings</a></li>
+            <li><a href="admin.html" class="footer-link">Admin Dashboard</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Categories</h4>
+          <ul class="footer-links">
+            <li><a href="events.html?cat=technology" class="footer-link">Technology</a></li>
+            <li><a href="events.html?cat=music" class="footer-link">Music & Festivals</a></li>
+            <li><a href="events.html?cat=sports" class="footer-link">Sports & Fitness</a></li>
+            <li><a href="events.html?cat=workshops" class="footer-link">Workshops & Masterclasses</a></li>
+            <li><a href="events.html?cat=cultural" class="footer-link">Cultural Galas</a></li>
+            <li><a href="events.html?cat=business" class="footer-link">Business & Venture</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Academic Project</h4>
+          <p class="text-sm text-muted" style="line-height: 1.6;">
+            College Web Development Assignment.<br>
+            Strictly built using HTML5, CSS3, Vanilla ES6+ JavaScript, and LocalStorage.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 Gatherly Platform. All rights reserved.
+        </div>
+        <div>
+          <span>Crafted with intentional design & clean code.</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/toast.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/card-builder.js"></script>
+  <script src="js/event-details.js"></script>
+</body>
+</html>
